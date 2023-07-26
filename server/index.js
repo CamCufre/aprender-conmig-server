@@ -8,13 +8,13 @@ const postLessonHandler=require('./src/handlers/lesson/postLessonHandler.js')
 const cors = require('cors')
 server.use(cors({origin: 'http://localhost:5173'}))
 // const whatsapp = require('../server/src/whatsapp.js')
-port = process.env.PORT
+const port = process.env.PORT || 3000
 
 conn.sync({ Altern: true })  //alter force
 .then(() => postLessonHandler(lessonsJson, Lesson))
 // .then(() => whatsapp)
 .then(() => {
-    server.listen(port, () => {
+    server.listen(port, "0.0.0.0", () => {
       console.log(`server listening at ${port}`); // eslint-disable-line no-console
     });
 });
