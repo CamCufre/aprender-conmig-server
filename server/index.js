@@ -14,7 +14,7 @@ conn.sync({ Altern: true })  //alter force
 .then(() => postLessonHandler(lessonsJson, Lesson))
 // .then(() => whatsapp)
 .then(() => {
-    server.listen(port, "0.0.0.0", () => {
+    server.listen(port, `0.0.0.0`, () => {
       console.log(`server listening at ${port}`); // eslint-disable-line no-console
     });
 });
